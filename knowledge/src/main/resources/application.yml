@@ -1,0 +1,22 @@
+server:
+  port: 8135
+
+spring:
+  application:
+    name: knowledge
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://knowledgedb:5432/data}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/dbchangelog-master.xml
+    url: ${DB_URL:jdbc:postgresql://knowledgedb:5432/data}
+    user: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}

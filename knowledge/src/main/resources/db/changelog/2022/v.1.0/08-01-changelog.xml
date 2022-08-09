@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1659967398898-1" author="vladislav (generated)">
+        <createTable tableName="description">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_description"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="sub_theme_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1659967398898-2" author="vladislav (generated)">
+        <createTable tableName="main_theme">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_maintheme"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="major_theme_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1659967398898-3" author="vladislav (generated)">
+        <createTable tableName="major_theme">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_majortheme"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1659967398898-4" author="vladislav (generated)">
+        <createTable tableName="sub_theme">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_subtheme"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="main_theme_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="1659967398898-5" author="vladislav (generated)">
+        <addForeignKeyConstraint baseColumnNames="sub_theme_uuid" baseTableName="description"
+                                 constraintName="FK_DESCRIPTION_ON_SUBTHEME_UUID" referencedColumnNames="uuid"
+                                 referencedTableName="sub_theme"/>
+    </changeSet>
+    <changeSet id="1659967398898-6" author="vladislav (generated)">
+        <addForeignKeyConstraint baseColumnNames="major_theme_uuid" baseTableName="main_theme"
+                                 constraintName="FK_MAINTHEME_ON_MAJORTHEME_UUID" referencedColumnNames="uuid"
+                                 referencedTableName="major_theme"/>
+    </changeSet>
+    <changeSet id="1659967398898-7" author="vladislav (generated)">
+        <addForeignKeyConstraint baseColumnNames="main_theme_uuid" baseTableName="sub_theme"
+                                 constraintName="FK_SUBTHEME_ON_MAINTHEME_UUID" referencedColumnNames="uuid"
+                                 referencedTableName="main_theme"/>
+    </changeSet>
+
+</databaseChangeLog>

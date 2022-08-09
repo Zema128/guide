@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+
+  knowledge-app:
+    container_name: knowledge
+    image: guide:knowledge
+    build: ./knowledge
+    ports:
+      - "1005:1005"
+    depends_on:
+      - knowledgedb
+
+########################################################################################################################
+#### Data base
+########################################################################################################################
+
+  knowledgedb:
+    hostname: knowledgedb
+    image: postgres:13.4-alpine
+    env_file:
+      - ./knowledge-db/knowledge.env
+    volumes:
+      - ./knowledge-db/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DB_USERNAME:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-postgres}
+      - POSTGRES_DB=${DB_GUIDE:-data}
+    ports:
+      - "54329:5432"
