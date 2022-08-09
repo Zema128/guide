@@ -1,5 +1,7 @@
 server:
   port: 8135
+  servlet:
+    context-path: /knowledge
 
 spring:
   application:
