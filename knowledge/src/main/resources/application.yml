@@ -1,5 +1,5 @@
 server:
-  port: 8135
+  port: 1005
   servlet:
     context-path: /knowledge
 

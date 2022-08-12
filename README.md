@@ -1,1 +1,1 @@
-It's guide for developer!@gt
+It's guide for developer!
