@@ -8,5 +8,5 @@ import test.senla.guide.model.MajorTheme;
 import java.util.UUID;
 
 @Repository
-public interface MainThemeDao extends CrudRepository<UUID, MainTheme> {
+public interface MainThemeDao extends CrudRepository<MainTheme, UUID> {
 }

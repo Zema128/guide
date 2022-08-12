@@ -8,6 +8,5 @@
     <include file="08-01-changelog.xml" relativeToChangelogFile="true"/>
     
     <include file="12-01-changelog-insert-new-entity.xml" relativeToChangelogFile="true"/>
-    <include file="12-01-changelog-insert-new-entity-2.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

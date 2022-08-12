@@ -7,5 +7,5 @@ import test.senla.guide.model.DescriptionApprove;
 import java.util.UUID;
 
 @Repository
-public interface DescriptionApproveDao extends CrudRepository<UUID, DescriptionApprove> {
+public interface DescriptionApproveDao extends CrudRepository<DescriptionApprove, UUID> {
 }

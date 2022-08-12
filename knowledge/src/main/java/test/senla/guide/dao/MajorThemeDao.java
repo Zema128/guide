@@ -7,6 +7,6 @@ import test.senla.guide.model.MajorTheme;
 import java.util.UUID;
 
 @Repository
-public interface MajorThemeDao extends CrudRepository<UUID, MajorTheme> {
+public interface MajorThemeDao extends CrudRepository<MajorTheme, UUID> {
 
 }
