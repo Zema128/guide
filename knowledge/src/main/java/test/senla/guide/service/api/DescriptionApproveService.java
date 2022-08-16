@@ -1,8 +1,6 @@
 package test.senla.guide.service.api;
 
-import test.senla.guide.dto.ApproveRecordDto;
 import test.senla.guide.dto.DescriptionApproveDto;
-import test.senla.guide.model.ApproveRecord;
 import test.senla.guide.model.DescriptionApprove;
 
 import java.util.List;

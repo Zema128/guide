@@ -1,6 +1,5 @@
 package test.senla.guide.model;
 
-import liquibase.pro.packaged.A;
 import lombok.Data;
 
 import javax.persistence.*;

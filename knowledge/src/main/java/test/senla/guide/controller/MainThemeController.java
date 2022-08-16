@@ -15,12 +15,12 @@ import java.util.UUID;
 public class MainThemeController {
 
     @GetMapping("{uuid}")
-    public MainThemeDto getMainThemeById(@PathVariable UUID uuid){
+    public MainThemeDto getMainThemeById(@PathVariable UUID uuid) {
         return new MainThemeDto();
     }
 
     @GetMapping()
-    public List<MainThemeDto> getMainThemes(){
+    public List<MainThemeDto> getMainThemes() {
         return Collections.singletonList(new MainThemeDto());
     }
 

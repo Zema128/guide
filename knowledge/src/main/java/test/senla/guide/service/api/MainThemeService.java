@@ -1,9 +1,7 @@
 package test.senla.guide.service.api;
 
 import test.senla.guide.dto.MainThemeDto;
-import test.senla.guide.dto.SubThemeDto;
 import test.senla.guide.model.MainTheme;
-import test.senla.guide.model.SubTheme;
 
 import java.util.List;
 import java.util.UUID;
