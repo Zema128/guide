@@ -1,3 +1,4 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide;
 
 import org.springframework.boot.SpringApplication;

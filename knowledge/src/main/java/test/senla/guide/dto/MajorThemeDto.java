@@ -1,12 +1,9 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dto;
 
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-import test.senla.guide.model.MainTheme;
-
-import javax.persistence.CascadeType;
-import javax.persistence.OneToMany;
-import java.util.List;
 
 @Getter
 @Setter

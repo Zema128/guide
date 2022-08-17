@@ -1,6 +1,6 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +14,5 @@ import test.senla.guide.dto.DescriptionApproveDto;
 public class DescriptionApproveController {
 
     @PostMapping()
-    public void descriptionToApprove(@RequestBody DescriptionApproveDto approveDto){
-
-    }
+    public void descriptionToApprove(@RequestBody DescriptionApproveDto approveDto) {}
 }

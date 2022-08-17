@@ -1,12 +1,10 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service.api;
-
-import test.senla.guide.dto.MajorThemeDto;
-import test.senla.guide.dto.SubThemeDto;
-import test.senla.guide.model.MajorTheme;
-import test.senla.guide.model.SubTheme;
 
 import java.util.List;
 import java.util.UUID;
+import test.senla.guide.dto.MajorThemeDto;
+import test.senla.guide.model.MajorTheme;
 
 public interface MajorThemeService {
 

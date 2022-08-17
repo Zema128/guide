@@ -1,12 +1,10 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service.api;
-
-import test.senla.guide.dto.ApproveRecordDto;
-import test.senla.guide.dto.DescriptionApproveDto;
-import test.senla.guide.model.ApproveRecord;
-import test.senla.guide.model.DescriptionApprove;
 
 import java.util.List;
 import java.util.UUID;
+import test.senla.guide.dto.DescriptionApproveDto;
+import test.senla.guide.model.DescriptionApprove;
 
 public interface DescriptionApproveService {
     DescriptionApproveDto update(DescriptionApprove approveRecord);

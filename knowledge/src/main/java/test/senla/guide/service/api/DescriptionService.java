@@ -1,18 +1,15 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service.api;
-
-import test.senla.guide.dto.DescriptionDto;
-import test.senla.guide.dto.SubThemeDto;
-import test.senla.guide.model.Description;
-import test.senla.guide.model.SubTheme;
 
 import java.util.List;
 import java.util.UUID;
+import test.senla.guide.dto.DescriptionDto;
 
 public interface DescriptionService {
 
-    DescriptionDto update(Description description);
+    DescriptionDto update(DescriptionDto description);
 
-    DescriptionDto save(Description description);
+    DescriptionDto save(DescriptionDto description);
 
     void deleteById(UUID uuid);
 

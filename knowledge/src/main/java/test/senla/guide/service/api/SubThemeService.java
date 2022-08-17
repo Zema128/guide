@@ -1,10 +1,10 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service.api;
-
-import test.senla.guide.dto.SubThemeDto;
-import test.senla.guide.model.SubTheme;
 
 import java.util.List;
 import java.util.UUID;
+import test.senla.guide.dto.SubThemeDto;
+import test.senla.guide.model.SubTheme;
 
 public interface SubThemeService {
 
@@ -17,5 +17,4 @@ public interface SubThemeService {
     SubThemeDto findById(UUID uuid);
 
     List<SubThemeDto> findAll();
-
 }
