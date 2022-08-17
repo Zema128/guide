@@ -1,11 +1,10 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dao;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import test.senla.guide.model.DescriptionApprove;
 
-import java.util.UUID;
-
 @Repository
-public interface DescriptionApproveDao extends CrudRepository<DescriptionApprove, UUID> {
-}
+public interface DescriptionApproveDao extends JpaRepository<DescriptionApprove, UUID> {}

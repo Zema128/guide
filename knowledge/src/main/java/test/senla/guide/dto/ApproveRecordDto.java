@@ -1,9 +1,9 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dto;
 
+import java.util.UUID;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.UUID;
 
 @Getter
 @Setter

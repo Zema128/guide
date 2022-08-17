@@ -1,12 +1,12 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dto;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.http.HttpStatus;
 
 @Data
 @NoArgsConstructor
@@ -36,5 +36,4 @@ public class ApiError {
         this.message = message;
         this.errors = Collections.emptyList();
     }
-
 }

@@ -1,5 +1,7 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import test.senla.guide.dao.DescriptionDao;
 import test.senla.guide.dto.DescriptionDto;
@@ -10,16 +12,12 @@ import test.senla.guide.service.api.DescriptionService;
 import java.util.List;
 import java.util.UUID;
 
+@RequiredArgsConstructor
 @Service
 public class DescriptionServiceImpl implements DescriptionService {
 
     private final DescriptionMapper mapper;
     private final DescriptionDao descriptionDao;
-
-    public DescriptionServiceImpl(DescriptionMapper mapper, DescriptionDao descriptionDao) {
-        this.mapper = mapper;
-        this.descriptionDao = descriptionDao;
-    }
 
     @Override
     public DescriptionDto update(DescriptionDto description) {
@@ -38,14 +36,18 @@ public class DescriptionServiceImpl implements DescriptionService {
 
     @Override
     public DescriptionDto findById(UUID uuid) {
-        return mapper
-                .descriptionToDescriptionDto(descriptionDao
+        return mapper.mapToDescriptionDto(
+                descriptionDao
                         .findById(uuid)
-                        .orElseThrow(() -> new EntityNotFoundException(String.format("No description with id '%id'.", uuid))));
+                        .orElseThrow(
+                                () ->
+                                        new EntityNotFoundException(
+                                                String.format(
+                                                        "No description with id '%s'.", uuid))));
     }
 
     @Override
     public List<DescriptionDto> findAll() {
-        return mapper.descriptionsToDescriptionDtoList(descriptionDao.findAll());
+        return mapper.mapToDescriptionDtos(descriptionDao.findAll());
     }
 }

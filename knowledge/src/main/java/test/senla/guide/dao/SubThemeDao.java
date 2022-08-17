@@ -1,11 +1,10 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dao;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import test.senla.guide.model.SubTheme;
 
-import java.util.UUID;
-
 @Repository
-public interface SubThemeDao extends CrudRepository<SubTheme, UUID> {
-}
+public interface SubThemeDao extends JpaRepository<SubTheme, UUID> {}

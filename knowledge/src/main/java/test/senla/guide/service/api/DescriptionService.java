@@ -1,9 +1,9 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service.api;
-
-import test.senla.guide.dto.DescriptionDto;
 
 import java.util.List;
 import java.util.UUID;
+import test.senla.guide.dto.DescriptionDto;
 
 public interface DescriptionService {
 

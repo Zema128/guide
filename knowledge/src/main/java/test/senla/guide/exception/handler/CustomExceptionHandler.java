@@ -1,3 +1,4 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.exception.handler;
 
 import lombok.extern.slf4j.Slf4j;
@@ -10,14 +11,17 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import test.senla.guide.dto.ApiError;
 import test.senla.guide.exception.EntityNotFoundException;
 
-
 @ControllerAdvice
 @Slf4j
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({EntityNotFoundException.class})
     public ResponseEntity<ApiError> handleEntityNotFound(EntityNotFoundException ex) {
-        ApiError apiError = new ApiError(HttpStatus.INTERNAL_SERVER_ERROR, ex.getLocalizedMessage(), "Entity not found!");
+        ApiError apiError =
+                new ApiError(
+                        HttpStatus.INTERNAL_SERVER_ERROR,
+                        ex.getLocalizedMessage(),
+                        "Entity not found!");
         log.error(ex.getLocalizedMessage(), ex);
         return new ResponseEntity<ApiError>(apiError, new HttpHeaders(), apiError.getStatus());
     }

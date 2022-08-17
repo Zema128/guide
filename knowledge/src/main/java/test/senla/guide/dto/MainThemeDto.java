@@ -1,9 +1,9 @@
+/* @author Vlad Zemec (C)2022 */
 package test.senla.guide.dto;
 
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
