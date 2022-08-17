@@ -23,6 +23,6 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
                         ex.getLocalizedMessage(),
                         "Entity not found!");
         log.error(ex.getLocalizedMessage(), ex);
-        return new ResponseEntity<ApiError>(apiError, new HttpHeaders(), apiError.getStatus());
+        return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
     }
 }
