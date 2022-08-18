@@ -20,11 +20,11 @@ public class MajorThemeController {
 
     @GetMapping("{uuid}")
     public MajorThemeDto getMajorThemeById(@PathVariable UUID uuid) {
-        return majorThemeService.findById(uuid);
+        return majorThemeService.getMajorThemeByIdDto(uuid);
     }
 
     @GetMapping()
     public List<MajorThemeDto> getMajorThemes() {
-        return majorThemeService.findAll();
+        return majorThemeService.getMajorThemes();
     }
 }

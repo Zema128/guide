@@ -4,16 +4,19 @@ package test.senla.guide.service.api;
 import java.util.List;
 import java.util.UUID;
 import test.senla.guide.dto.DescriptionDto;
+import test.senla.guide.model.Description;
 
 public interface DescriptionService {
 
-    DescriptionDto update(DescriptionDto description);
+    DescriptionDto updateDescription(UUID descriptionId, DescriptionDto description);
 
-    DescriptionDto save(DescriptionDto description);
+    DescriptionDto createDescription(UUID subId, DescriptionDto description);
 
-    void deleteById(UUID uuid);
+    void deleteDescriptionById(UUID uuid);
 
-    DescriptionDto findById(UUID uuid);
+    DescriptionDto getDescriptionByIdDto(UUID uuid);
 
-    List<DescriptionDto> findAll();
+    Description getDescriptionById(UUID uuid);
+
+    List<DescriptionDto> getDescriptions();
 }

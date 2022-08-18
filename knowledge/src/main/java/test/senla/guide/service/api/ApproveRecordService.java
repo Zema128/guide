@@ -7,6 +7,7 @@ import test.senla.guide.dto.ApproveRecordDto;
 import test.senla.guide.model.ApproveRecord;
 
 public interface ApproveRecordService {
+
     ApproveRecordDto update(ApproveRecord approveRecord);
 
     ApproveRecordDto save(ApproveRecord approveRecord);

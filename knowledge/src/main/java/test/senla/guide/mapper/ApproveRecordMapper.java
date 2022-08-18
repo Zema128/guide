@@ -1,11 +1,10 @@
 /* @author Vlad Zemec (C)2022 */
 package test.senla.guide.mapper;
 
+import java.util.List;
 import org.mapstruct.Mapper;
 import test.senla.guide.dto.ApproveRecordDto;
 import test.senla.guide.model.ApproveRecord;
-
-import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface ApproveRecordMapper {

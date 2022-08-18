@@ -43,7 +43,7 @@ public class ApproveRecordServiceImpl implements ApproveRecordService {
                                 () ->
                                         new EntityNotFoundException(
                                                 String.format(
-                                                        "No description with id '%s'.", uuid))));
+                                                        "No approve record with id '%s'.", uuid))));
     }
 
     @Override

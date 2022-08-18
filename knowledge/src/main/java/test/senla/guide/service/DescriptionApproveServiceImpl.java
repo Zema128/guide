@@ -43,7 +43,8 @@ public class DescriptionApproveServiceImpl implements DescriptionApproveService 
                                 () ->
                                         new EntityNotFoundException(
                                                 String.format(
-                                                        "No description with id '%s'.", uuid))));
+                                                        "No description to approve with id '%s'.",
+                                                        uuid))));
     }
 
     @Override

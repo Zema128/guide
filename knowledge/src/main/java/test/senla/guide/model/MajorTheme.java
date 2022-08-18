@@ -3,10 +3,7 @@ package test.senla.guide.model;
 
 import java.util.List;
 import java.util.UUID;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import lombok.*;
 
 @Getter
@@ -17,7 +14,9 @@ import lombok.*;
 @Entity
 public class MajorTheme {
 
-    @Id private UUID uuid;
+    @Id
+    @GeneratedValue(generator = "UUID_GENERATOR")
+    private UUID uuid;
 
     private String name;
 

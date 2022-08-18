@@ -20,11 +20,11 @@ public class DescriptionController {
 
     @GetMapping("{uuid}")
     public DescriptionDto getDescriptionById(@PathVariable UUID uuid) {
-        return descriptionService.findById(uuid);
+        return descriptionService.getDescriptionByIdDto(uuid);
     }
 
     @GetMapping()
     public List<DescriptionDto> getDescriptions() {
-        return descriptionService.findAll();
+        return descriptionService.getDescriptions();
     }
 }

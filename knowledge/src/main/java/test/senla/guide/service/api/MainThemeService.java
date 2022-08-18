@@ -7,13 +7,16 @@ import test.senla.guide.dto.MainThemeDto;
 import test.senla.guide.model.MainTheme;
 
 public interface MainThemeService {
-    MainThemeDto update(MainTheme subTheme);
 
-    MainThemeDto save(MainTheme subTheme);
+    MainThemeDto updateMainTheme(UUID mainId, MainThemeDto mainThemeDto);
 
-    void deleteById(UUID uuid);
+    MainThemeDto createMainTheme(UUID majorId, MainThemeDto mainThemeDto);
 
-    MainThemeDto findById(UUID uuid);
+    void deleteMainThemeById(UUID uuid);
 
-    List<MainThemeDto> findAll();
+    MainThemeDto getMainThemeDto(UUID mainId);
+
+    MainTheme getMainThemeById(UUID uuid);
+
+    List<MainThemeDto> getMainThemes();
 }
