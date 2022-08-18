@@ -1,12 +1,13 @@
 /* @author Vlad Zemec (C)2022 */
 package test.senla.guide.controller.admin;
 
-import java.util.UUID;
-import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import test.senla.guide.dto.SubThemeDto;
 import test.senla.guide.service.api.SubThemeService;
+
+import javax.validation.Valid;
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
