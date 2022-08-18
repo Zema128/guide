@@ -9,7 +9,7 @@ import test.senla.guide.service.api.DescriptionService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/admin/sub")
+@RequestMapping("/admin/description")
 public class AdminDescriptionController {
 
     private final DescriptionService descriptionService;

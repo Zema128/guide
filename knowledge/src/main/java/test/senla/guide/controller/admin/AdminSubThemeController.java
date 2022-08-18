@@ -28,7 +28,7 @@ public class AdminSubThemeController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteMajorTheme(@PathVariable UUID id) {
+    public void deleteSubTheme(@PathVariable UUID id) {
         subThemeService.deleteSubThemeById(id);
     }
 }
