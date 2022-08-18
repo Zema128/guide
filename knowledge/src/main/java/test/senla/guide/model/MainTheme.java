@@ -14,7 +14,9 @@ import lombok.*;
 @Entity
 public class MainTheme {
 
-    @Id private UUID uuid;
+    @Id
+    @GeneratedValue(generator = "UUID_GENERATOR")
+    private UUID uuid;
 
     private String name;
 

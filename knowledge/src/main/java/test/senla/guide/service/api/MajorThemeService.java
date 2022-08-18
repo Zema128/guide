@@ -8,13 +8,15 @@ import test.senla.guide.model.MajorTheme;
 
 public interface MajorThemeService {
 
-    MajorThemeDto update(MajorTheme subTheme);
+    MajorThemeDto updateMajorTheme(MajorThemeDto subTheme, UUID majorThemeId);
 
-    MajorThemeDto save(MajorTheme subTheme);
+    MajorThemeDto createMajorTheme(MajorThemeDto subTheme);
 
-    void deleteById(UUID uuid);
+    void deleteMajorThemeById(UUID uuid);
 
-    MajorThemeDto findById(UUID uuid);
+    MajorThemeDto getMajorThemeByIdDto(UUID uuid);
 
-    List<MajorThemeDto> findAll();
+    MajorTheme getMajorThemeById(UUID uuid);
+
+    List<MajorThemeDto> getMajorThemes();
 }

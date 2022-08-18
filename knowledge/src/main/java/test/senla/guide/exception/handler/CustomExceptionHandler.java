@@ -15,6 +15,17 @@ import test.senla.guide.exception.EntityNotFoundException;
 @Slf4j
 public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
+    @ExceptionHandler({Exception.class})
+    public ResponseEntity<ApiError> handleAll(Exception ex) {
+        ApiError apiError =
+                new ApiError(
+                        HttpStatus.INTERNAL_SERVER_ERROR,
+                        ex.getLocalizedMessage(),
+                        "error occurred");
+        log.error(ex.getLocalizedMessage(), ex);
+        return new ResponseEntity<>(apiError, new HttpHeaders(), apiError.getStatus());
+    }
+
     @ExceptionHandler({EntityNotFoundException.class})
     public ResponseEntity<ApiError> handleEntityNotFound(EntityNotFoundException ex) {
         ApiError apiError =

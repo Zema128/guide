@@ -16,15 +16,15 @@ import test.senla.guide.service.api.SubThemeService;
 @RequestMapping("/sub")
 public class SubThemeController {
 
-    private final SubThemeService themeService;
+    private final SubThemeService subThemeService;
 
     @GetMapping("{uuid}")
     public SubThemeDto getSubThemeById(@PathVariable UUID uuid) {
-        return themeService.findById(uuid);
+        return subThemeService.getSubThemeByIdDto(uuid);
     }
 
     @GetMapping()
     public List<SubThemeDto> getSubThemes() {
-        return themeService.findAll();
+        return subThemeService.getSubThemes();
     }
 }

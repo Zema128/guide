@@ -8,13 +8,15 @@ import test.senla.guide.model.SubTheme;
 
 public interface SubThemeService {
 
-    SubThemeDto update(SubTheme subTheme);
+    SubThemeDto updateSubTheme(UUID subId, SubThemeDto subThemeDto);
 
-    SubThemeDto save(SubTheme subTheme);
+    SubThemeDto createSubTheme(UUID mainId, SubThemeDto subThemeDto);
 
-    void deleteById(UUID uuid);
+    void deleteSubThemeById(UUID uuid);
 
-    SubThemeDto findById(UUID uuid);
+    SubThemeDto getSubThemeByIdDto(UUID uuid);
 
-    List<SubThemeDto> findAll();
+    SubTheme getSubThemeById(UUID uuid);
+
+    List<SubThemeDto> getSubThemes();
 }

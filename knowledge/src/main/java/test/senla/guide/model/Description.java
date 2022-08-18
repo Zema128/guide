@@ -3,6 +3,7 @@ package test.senla.guide.model;
 
 import java.util.UUID;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import lombok.*;
@@ -15,7 +16,9 @@ import lombok.*;
 @Entity
 public class Description {
 
-    @Id private UUID uuid;
+    @Id
+    @GeneratedValue(generator = "UUID_GENERATOR")
+    private UUID uuid;
 
     private String name;
 

@@ -3,6 +3,7 @@ package test.senla.guide.model;
 
 import java.util.UUID;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import lombok.*;
 
@@ -14,7 +15,9 @@ import lombok.*;
 @Entity
 public class DescriptionApprove {
 
-    @Id private UUID uuid;
+    @Id
+    @GeneratedValue(generator = "UUID_GENERATOR")
+    private UUID uuid;
 
     private UUID subThemeUuid;
 

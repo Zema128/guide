@@ -2,6 +2,7 @@
 package test.senla.guide.dto;
 
 import java.util.List;
+import javax.validation.constraints.Null;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +14,5 @@ public class SubThemeDto {
 
     private String description;
 
-    private MainThemeDto mainTheme;
-
-    private List<DescriptionDto> descriptions;
+    @Null private List<DescriptionDto> descriptions;
 }

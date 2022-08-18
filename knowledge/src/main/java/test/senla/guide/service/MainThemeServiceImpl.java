@@ -5,12 +5,15 @@ import java.util.List;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import test.senla.guide.dao.MainThemeDao;
 import test.senla.guide.dto.MainThemeDto;
 import test.senla.guide.exception.EntityNotFoundException;
 import test.senla.guide.mapper.MainThemeMapper;
 import test.senla.guide.model.MainTheme;
+import test.senla.guide.model.MajorTheme;
 import test.senla.guide.service.api.MainThemeService;
+import test.senla.guide.service.api.MajorThemeService;
 
 @RequiredArgsConstructor
 @Service
@@ -18,36 +21,47 @@ public class MainThemeServiceImpl implements MainThemeService {
 
     private final MainThemeMapper mapper;
     private final MainThemeDao mainThemeDao;
+    private final MajorThemeService majorThemeService;
 
+    @Transactional
     @Override
-    public MainThemeDto update(MainTheme subTheme) {
-        return null;
+    public MainThemeDto updateMainTheme(UUID mainId, MainThemeDto mainThemeDto) {
+        MainTheme mainTheme = getMainThemeById(mainId);
+        mapper.update(mainTheme, mainThemeDto);
+        return mapper.mapToMainThemeDto(mainTheme);
+    }
+
+    @Transactional
+    @Override
+    public MainThemeDto createMainTheme(UUID majorId, MainThemeDto mainThemeDto) {
+        MajorTheme majorTheme = majorThemeService.getMajorThemeById(majorId);
+        MainTheme mainTheme = mapper.mapToMainTheme(mainThemeDto);
+        mainTheme.setMajorTheme(majorTheme);
+        return mapper.mapToMainThemeDto(mainThemeDao.save(mainTheme));
     }
 
     @Override
-    public MainThemeDto save(MainTheme subTheme) {
-        return null;
-    }
-
-    @Override
-    public void deleteById(UUID uuid) {
+    public void deleteMainThemeById(UUID uuid) {
         mainThemeDao.deleteById(uuid);
     }
 
     @Override
-    public MainThemeDto findById(UUID uuid) {
-        return mapper.mapToMainThemeDto(
-                mainThemeDao
-                        .findById(uuid)
-                        .orElseThrow(
-                                () ->
-                                        new EntityNotFoundException(
-                                                String.format(
-                                                        "No Main topic with id '%s'.", uuid))));
+    public MainThemeDto getMainThemeDto(UUID mainId) {
+        return mapper.mapToMainThemeDto(getMainThemeById(mainId));
     }
 
     @Override
-    public List<MainThemeDto> findAll() {
+    public MainTheme getMainThemeById(UUID uuid) {
+        return mainThemeDao
+                .findById(uuid)
+                .orElseThrow(
+                        () ->
+                                new EntityNotFoundException(
+                                        String.format("No Main topic with id '%s'.", uuid)));
+    }
+
+    @Override
+    public List<MainThemeDto> getMainThemes() {
         return mapper.mapToMainThemeDtos(mainThemeDao.findAll());
     }
 }
