@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ApproveRecordDto {
+public class FinishedDescriptionDto {
 
-    private UUID recordToApproveId;
+    private UUID descriptionId;
 }
