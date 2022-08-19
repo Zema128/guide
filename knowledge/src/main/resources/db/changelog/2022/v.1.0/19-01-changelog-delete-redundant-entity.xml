@@ -5,10 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
 
-    <include file="08-01-changelog.xml" relativeToChangelogFile="true"/>
-    
-    <include file="12-01-changelog-insert-new-entity.xml" relativeToChangelogFile="true"/>
-
-    <include file="19-01-changelog-delete-redundant-entity.xml" relativeToChangelogFile="true"/>
-
+    <changeSet id="1660901689388-1" author="vladislav (generated)">
+        <dropTable cascadeConstraints="true" tableName="approve_record"/>
+    </changeSet>
 </databaseChangeLog>

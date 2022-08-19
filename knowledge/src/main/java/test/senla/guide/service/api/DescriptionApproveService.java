@@ -4,17 +4,23 @@ package test.senla.guide.service.api;
 import java.util.List;
 import java.util.UUID;
 import test.senla.guide.dto.DescriptionApproveDto;
+import test.senla.guide.dto.FinishedDescriptionDto;
 import test.senla.guide.model.DescriptionApprove;
 
 public interface DescriptionApproveService {
 
-    DescriptionApproveDto update(DescriptionApprove approveRecord);
+    DescriptionApproveDto updateDescriptionApprove(
+            UUID approveId, DescriptionApproveDto approveDto);
 
-    DescriptionApproveDto save(DescriptionApprove approveRecord);
+    DescriptionApproveDto createDescriptionApprove(DescriptionApproveDto approveDto);
 
-    void deleteById(UUID uuid);
+    void saveDescription(FinishedDescriptionDto descriptionDto);
 
-    DescriptionApproveDto findById(UUID uuid);
+    void deleteDescriptionApproveById(UUID uuid);
 
-    List<DescriptionApproveDto> findAll();
+    DescriptionApproveDto getDescriptionApproveByIdDto(UUID uuid);
+
+    DescriptionApprove getDescriptionApproveById(UUID uuid);
+
+    List<DescriptionApproveDto> getDescriptionApproves();
 }

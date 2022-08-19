@@ -1,6 +1,8 @@
 /* @author Vlad Zemec (C)2022 */
 package test.senla.guide.service;
 
+import java.util.List;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,9 +14,6 @@ import test.senla.guide.model.MainTheme;
 import test.senla.guide.model.SubTheme;
 import test.senla.guide.service.api.MainThemeService;
 import test.senla.guide.service.api.SubThemeService;
-
-import java.util.List;
-import java.util.UUID;
 
 @RequiredArgsConstructor
 @Service

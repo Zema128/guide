@@ -7,12 +7,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import test.senla.guide.dto.DescriptionApproveDto;
+import test.senla.guide.service.api.DescriptionApproveService;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/description-approve")
+@RequestMapping("/approve")
 public class DescriptionApproveController {
 
-    @PostMapping()
-    public void descriptionToApprove(@RequestBody DescriptionApproveDto approveDto) {}
+    private final DescriptionApproveService approveService;
+
+    @PostMapping("/apply")
+    public void descriptionToApprove(@RequestBody DescriptionApproveDto approveDto) {
+        approveService.createDescriptionApprove(approveDto);
+    }
 }
